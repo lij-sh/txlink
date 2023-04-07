@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+function add_prod(){
+    document.getElementById("prod-add").style.display= ''
+  }
+</script>
+
+<h1> 产品中心 </h1>
+<div>
+<table>
+<tr> 
+    <td>操作</td>
+    <td><button onclick="return add_prod()"> 新增 </button> </td>
+    <td><a href="{{ url_for('prod.prod_center') }}">删除</a></td>
+</tr>
+</table>
+
+<div id="prod-add" style="display: none">
+<table>
+    <form >
+        <tr> <th> 产品名称</th><th> 规格</th><th> 单位</th></tr>
+        <tr><td><input type="text" ></td><input type="text" ></td><input type="text" ></td></tr>
+        <tr><td><button> 确认添加</button></td></tr>
+    </form>
+</table>    
+</div>
+
+<table id="prod-table">
+    <form>
+    <tr>
+        <th><input type="checkbox" unchecked />全选</th>
+        <th>产品名称<th>
+
+    </tr>
+    {% for prod in prods %}
+    <tr>
+        <td><input type="checkbox" unchecked /></td>
+        <td> {{ prod['prod_name'] }}</td>
+ 
+    </tr>
+    {% endfor %}
+    </form>
+</table>
+
+</div>
+
+{% endblock %}

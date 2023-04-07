@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> 客户列表如下 </h1>
+
+<table>
+    <form>
+    <tr>
+        <th>客户姓名</th>
+        <th>公司地址</th>
+        <th>工地地址</th>
+        <th>邮箱</th>
+        <th>备注</th>
+    </tr>
+    {% for cust in custs %}
+    <tr>
+        <td> <a href="{{ url_for('cust.edit_cust', id =cust['id']) }}">{{ cust['customer_name'] }}</a></td>
+        <td>{{ cust['company_addr'] }}</td>
+        <td>{{ cust['site_addr'] }}</td>
+        <td>{{ cust['Email'] }}</td>
+        <td>{{ cust['Note'] }}</td>
+    </tr>
+    {% endfor %}
+    </form>
+</table>
+
+{% endblock %}

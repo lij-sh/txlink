@@ -1,0 +1,46 @@
+<!doctype html>
+<div class="Menu">
+    <ul> <a href="{{ url_for('cust.index') }}"> Dashboard </a> </ul>
+    
+    <ul>
+      <p onclick="menu_active(ulOne)">客户管理</p>
+      <ul class="childUl" id="ulOne" style="display: block;">
+        <ul> <a href="{{ url_for('cust.cust_list') }}"> 客户列表 </a> </ul>
+        <ul> <a href="{{ url_for('cust.add_cust') }}"> 添加客户 </a> </ul>
+      </ul>
+    </ul>
+  
+    <ul>
+      <p onclick="menu_active(ulTwo)">产品中心</p>
+      <ul class="childUl" id="ulTwo" style="display: block;">
+        <ul> <a href="{{ url_for('prod.prod_center') }}"> 产品列表 </a> </ul>
+      </ul>
+    </ul>
+  
+    <ul>
+      <p onclick="menu_active(ulThree)">收发单管理</p>
+      <ul class="childUl" id="ulThree" style="display: block;">
+        <ul>查询收发单</ul>
+        <ul>创建收发单模版</ul>
+        <ul>新建收发单</ul>
+      </ul>
+    </ul>
+  
+    <ul>  
+      <p onclick="menu_active(ulFour)">仓储管理</p>
+      <ul class="childUl" id="ulFour" style="display: block;">
+        <ul>查询库存</ul>
+        <ul>租金结算</ul>
+      </ul> 
+    </ul>
+  
+    <ul>  
+      <p onclick="menu_active(ulFive)">圈子</p>
+      <ul class="childUl" id="ulFive" style="display: block;">
+        <ul>我的资料</ul>
+        <ul>伙伴</ul>
+        <ul>行业动态</ul>
+      </ul> 
+    </ul>
+  </div>
+  

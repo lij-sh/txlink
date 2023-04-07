@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> 客户资料 </h1>
+<form method="post">
+    <ul>       
+     <li> 
+        <label for="id">客户ID:</label>
+        <input type="text" id="id" name="id" value="{{cust['id']}}" readOnly>        
+     </li>
+     <li>
+       <label for="customer_name">客户名称:</label>
+       <input type="text" class = "cust_info" id="customer_name" name="customer_name" value="{{cust['customer_name']}}" readOnly required>
+     </li>
+     <li>
+        <label for="company_addr">公司地址:</label>
+        <input class = "cust_info" id="addr"  name="company_addr" value="{{cust['company_addr']}}" readOnly>  
+      </li>
+      <li>
+        <label for="site_addr">工地地址:</label>
+        <input class = "cust_info" id="addr" name="site_addr" value="{{cust['site_addr']}}" readOnly>
+      </li>      
+     <li>
+       <label for="Email">E-mail:</label>
+       <input type="email" class = "cust_info" id="Email" name="Email" value="{{cust['Email']}}" readOnly>
+     </li>
+     <li>
+       <label for="Note">备注:</label>
+       <textarea id="Note" name="Note" value="{{cust['Note']}}"></textarea>
+     </li>
+     <li class="button">
+        <button id = "editBtn" type="button" onclick="return edit()" > 修改 </button>
+        <button id = "saveBtn" type="submit" name="action" value ="save" onclick="return edit()" disabled>保存修改</button>  
+        <button id = "deleteBtn" type="submit" name="action" value="delete">删除客户</button>
+      </li>         
+    </ul>
+   </form>
+<p>  </p>
+{% endblock %}
